@@ -4,7 +4,10 @@ const input = document.getElementById("inpville");
 const bouton = document.getElementById("botton");
 const container = document.getElementById("d1");
 
-const apiKey = "8e127a37cad3cd4876c96027614acd09";
+// Remplacer par une clé OpenWeatherMap personnelle (gratuite) : https://openweathermap.org/api
+// L'API étant appelée depuis le navigateur, la clé reste visible côté client : utiliser une
+// clé dédiée à ce type de démo, jamais une clé partagée avec un autre projet.
+const apiKey = "VOTRE_CLE_OPENWEATHERMAP";
 
 bouton.addEventListener("click", () => {
     const ville = input.value.trim();
@@ -31,7 +34,7 @@ const fetchMeteo = async (ville) => {
             afficherErreur("Ville introuvable !");
         }
     } catch (error) {
-        afficherErreur("Erreur réseau, vérifie ta connexion !"); //
+        afficherErreur("Erreur réseau, vérifie ta connexion !");
     }
 };
 
